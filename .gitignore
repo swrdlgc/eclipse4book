@@ -3,6 +3,7 @@ bin
 target
 .searchable
 screenshots/
+.settings
 
 # You can use wildcards as well
 

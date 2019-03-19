@@ -8,6 +8,8 @@ import org.eclipse.swt.events.KeyAdapter;
 import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
@@ -22,7 +24,9 @@ public class SwitchLanguageToolControl {
 	@Inject
 	public SwitchLanguageToolControl(Composite parent, MessagesRegistry messagesRegistry) {
 
+		parent.setLayout(new GridLayout(10, false));
 		final Text input = new Text(parent, SWT.BORDER);
+		input.setLayoutData(new GridData(200, -1));
 
 		input.addKeyListener(new KeyAdapter() {
 			@Override
