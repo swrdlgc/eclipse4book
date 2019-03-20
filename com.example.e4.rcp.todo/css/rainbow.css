@@ -10,10 +10,12 @@ Shell {
 
 .MPart:selected {
    visible:gone;
-   background-color:black;
+   background-color:red;
 }
 
 .MPartStack {
-border-visible:false;
+	border-visible:false;
+	swt-maximize-visible: false;
+    swt-minimize-visible: false;
 }
 

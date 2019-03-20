@@ -85,7 +85,7 @@ public class TodoOverviewPart {
 
 		// Assuming that GridLayout is used
 		search.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, false, false, 2, 1));
-		messageRegistry.register(search::setText, m -> m.txtSearchMessage);
+		messageRegistry.register(search::setMessage, m -> m.txtSearchMessage);
 
 		// Filter at every keystroke
 		search.addModifyListener(e -> {
