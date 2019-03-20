@@ -12,6 +12,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
 import com.example.e4.rcp.todo.i18n.MessagesRegistry;
@@ -22,7 +23,7 @@ public class SwitchLanguageToolControl {
 	ILocaleChangeService lcs;
 
 	@Inject
-	public SwitchLanguageToolControl(Composite parent, MessagesRegistry messagesRegistry) {
+	public SwitchLanguageToolControl(Composite parent, MessagesRegistry messagesRegistry, Shell shell) {
 
 		parent.setLayout(new GridLayout(10, false));
 		final Text input = new Text(parent, SWT.BORDER);
@@ -33,6 +34,7 @@ public class SwitchLanguageToolControl {
 			public void keyPressed(KeyEvent event) {
 				if (event.keyCode == SWT.CR || event.keyCode == SWT.KEYPAD_CR) {
 					lcs.changeApplicationLocale(input.getText());
+					shell.layout(true, true);
 				}
 			}
 		});
@@ -43,6 +45,7 @@ public class SwitchLanguageToolControl {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				lcs.changeApplicationLocale(input.getText());
+				shell.layout(true, true);
 			};
 		});
 	}
