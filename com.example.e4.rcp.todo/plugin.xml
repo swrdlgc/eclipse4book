@@ -57,6 +57,11 @@
             id="com.example.e4.rcp.todo.rainbow"
             label="Rainbow">
       </theme>
+      <theme
+            basestylesheeturi="css/black.css"
+            id="com.example.e4.rcp.todo.black"
+            label="Black">
+      </theme>
    </extension>
    <extension point="org.eclipse.core.expressions.definitions">
 		<definition 	id="com.example.e4.rcp.todo.selectionset">
